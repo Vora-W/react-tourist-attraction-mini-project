@@ -1,7 +1,9 @@
-import "./App.css";
+import TripsView from "./components/TripsView";
 
 function App() {
-  return <div className="App">{/* Start coding here */}</div>;
+  return (
+  <TripsView />
+  );
 }
 
 export default App;
