@@ -1,5 +1,7 @@
-function TripCard({ title, description, url, photos, tags }) {
+import TagList from "./TagList";
+import ThumbnailGallery from "./ThumbnailGallery";
 
+function TripCard({ title, description, url, photos, tags }) {
   return (
     <article className="flex gap-8 py-8 border-b border-gray-100 relative">
       {/* Main Image */}
@@ -36,34 +38,11 @@ function TripCard({ title, description, url, photos, tags }) {
         </p>
 
         {/* Tags */}
-        <div className="mb-4">
-          <span className="mr-2">หมวด</span>
-          {tags
-            .filter((tag) => tag !== tags[[tags.length - 1]])
-            .map((tag) => (
-              <span key={tag} className="mr-2">
-                <span className="underline">{tag}</span>
-              </span>
-            ))}
-          <span className="mr-2">และ</span>
-          <span className="underline">{tags[tags.length - 1]}</span>
-        </div>
+        <TagList tags={tags} />
 
         {/* Thumbnail Images */}
-        <div className="flex gap-8">
-          {photos
-            .filter((photo) => photo !== photos[0])
-            .map((photo) => (
-              <img
-                key={photo}
-                src={photo}
-                alt={title}
-                className="w-24 h-24 object-cover rounded-xl "
-              />
-            ))}
-        </div>
+        <ThumbnailGallery photos={photos} alt={title} />
       </div>
-
     </article>
   );
 }

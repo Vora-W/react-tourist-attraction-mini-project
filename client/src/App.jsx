@@ -2,7 +2,9 @@ import TripsView from "./components/TripsView";
 
 function App() {
   return (
-  <TripsView />
+    <div className="min-h-screen w-full text-sm text-gray-400 bg-white">
+      <TripsView />
+    </div>
   );
 }
 
